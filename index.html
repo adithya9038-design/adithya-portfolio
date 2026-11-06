@@ -20,9 +20,16 @@
             </div>
         </section>
 
-        <section id="activity-feed">
+       <section id="activity-feed">
             <h2>What I'm Doing</h2>
-            <ul id="feed-list">
+            
+            <!-- The Add Post Box -->
+            <div id="add-post-container" style="background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
+                <input type="text" id="post-input" placeholder="What are you working on right now?" style="width: 80%; padding: 0.5rem; background: #333; color: white; border: 1px solid #555; border-radius: 4px;">
+                <button onclick="addPost()" style="padding: 0.5rem 1rem; background-color: #00e5ff; color: #121212; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Post</button>
+            </div>
+
+            <ul id="feed-list" style="list-style-type: none; padding: 0;">
                 <!-- Activity updates will go here -->
             </ul>
         </section>

@@ -37,3 +37,48 @@ function displayProjects() {
 }
 
 displayProjects();
+// --- Activity Feed Feature ---
+
+// 1. Load existing posts from the browser's memory when the page opens
+function loadPosts() {
+    const feedList = document.getElementById('feed-list');
+    feedList.innerHTML = ''; // Clear the list first
+    
+    // Get posts from localStorage, or start with an empty array if there are none
+    const savedPosts = JSON.parse(localStorage.getItem('adithyaActivityPosts')) || [];
+    
+    savedPosts.forEach(postText => {
+        const li = document.createElement('li');
+        li.style.backgroundColor = '#1e1e1e';
+        li.style.padding = '1rem';
+        li.style.marginBottom = '0.5rem';
+        li.style.borderRadius = '4px';
+        li.style.borderLeft = '4px solid #ff4081'; // Pink accent for posts
+        li.textContent = postText;
+        feedList.appendChild(li);
+    });
+}
+
+// 2. Function to add a new post when the button is clicked
+function addPost() {
+    const input = document.getElementById('post-input');
+    const newPostText = input.value.trim();
+    
+    if (newPostText !== "") {
+        // Get existing posts
+        const savedPosts = JSON.parse(localStorage.getItem('adithyaActivityPosts')) || [];
+        
+        // Add the new post to the top of the list
+        savedPosts.unshift(newPostText);
+        
+        // Save the updated list back to localStorage
+        localStorage.setItem('adithyaActivityPosts', JSON.stringify(savedPosts));
+        
+        // Clear the input box and reload the list on screen
+        input.value = '';
+        loadPosts();
+    }
+}
+
+// Load posts immediately when the script runs
+loadPosts();
