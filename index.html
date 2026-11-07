@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adithya S | Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adithya S • Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,700;1,900&display=swap"
+        rel="stylesheet" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Firebase SDK (v9) -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- Site JS -->
+  <script type="module" src="script.js" defer></script>
 </head>
 <body>
-  <header>
-        <h1>Adithya S / Dev</h1>
-        <p>BCA Student / Based in India</p>
-    </header>
-
-    <div class="hero-section">
-        <h2>I BUILD DIGITAL<br>EXPERIENCES THAT<br>FEEL ALIVE.</h2>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="brand">
+        <h1>Adithya S</h1>
+        <p class="role-location">BCA Student • Cybersecurity, Android &amp; IoT Developer • India</p>
+      </div>
     </div>
-        </section>
+  </nav>
 
-       <section id="activity-feed">
-            <h2>What I'm Doing</h2>
-            
-            <!-- The Add Post Box -->
-            <div id="add-post-container" style="background-color: #1e1e1e; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
-                <input type="text" id="post-input" placeholder="What are you working on right now?" style="width: 80%; padding: 0.5rem; background: #333; color: white; border: 1px solid #555; border-radius: 4px;">
-                <button onclick="addPost()" style="padding: 0.5rem 1rem; background-color: #00e5ff; color: #121212; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Post</button>
-            </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2 class="hero-text">
+        I BUILD DIGITAL EXPERIENCES THAT FEEL ALIVE.
+      </h2>
+    </div>
+  </section>
 
-            <ul id="feed-list" style="list-style-type: none; padding: 0;">
-                <!-- Activity updates will go here -->
-            </ul>
-        </section>
-    </main>
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Projects Grid -->
+    <section class="projects">
+      <h3 class="section-title">Projects</h3>
+      <div class="grid">
+        <article class="card">
+          <h4>Walk Home Safe (Suraksha Bharat)</h4>
+          <p>Voice‑activated Android safety application built in Jetpack Compose.</p>
+        </article>
 
-    <script src="script.js"></script>
+        <article class="card">
+          <h4>Ultron Nexus</h4>
+          <p>Multimodal Python desktop AI assistant with offline voice and local Ollama integration.</p>
+        </article>
+
+        <article class="card">
+          <h4>Scientist Beniel's Lab</h4>
+          <p>Custom IoT gas detection system (Arduino, MQ‑2, OLED).</p>
+        </article>
+
+        <article class="card">
+          <h4>Azure ETL Pipeline</h4>
+          <p>End‑to‑end Python data pipeline with Azure Blob Storage.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Activity Feed -->
+    <section class="activity">
+      <h3 class="section-title">What I'm Doing</h3>
+      <div class="post-input">
+        <input type="text" id="postText" placeholder="Share an update…" />
+        <button id="postBtn">Post</button>
+      </div>
+      <ul id="postsList" class="posts-list">
+        <!-- Real‑time posts will be injected here -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Adithya S. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
