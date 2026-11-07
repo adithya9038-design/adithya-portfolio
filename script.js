@@ -1,19 +1,13 @@
 /* -------------------------------------------------
-   Firebase – Real‑time Activity Feed
+   Firebase – Real-time Activity Feed
    ------------------------------------------------- */
-// NOTE: Replace the placeholder object below with the config you obtain from
-// Firebase Console > Project Settings > Your apps.
-// Example:
-// const firebaseConfig = {
-//   apiKey: "AIza...",
-//   authDomain: "your-app.firebaseapp.com",
-//   projectId: "your-app",
-//   storageBucket: "your-app.appspot.com",
-//   messagingSenderId: "1234567890",
-//   appId: "1:1234567890:web:abcdef"
-// };
 const firebaseConfig = {
-  // 👉 Paste your Firebase config here
+  apiKey: "AIzaSyCcDeRtVHdpEU8WBKpoHAN0dmtsTM53eu4",
+  authDomain: "adithya-portfolio-4dbff.firebaseapp.com",
+  projectId: "adithya-portfolio-4dbff",
+  storageBucket: "adithya-portfolio-4dbff.firebasestorage.app",
+  messagingSenderId: "297729088030",
+  appId: "1:297729088030:web:aa0a94f012bfc0f9316c0f"
 };
 
 // -------------------------------------------------
@@ -57,7 +51,7 @@ postBtn.addEventListener("click", async () => {
 });
 
 // -------------------------------------------------
-// Real‑time listener: render posts descending (newest on top)
+// Real-time listener: render posts descending (newest on top)
 const postsQuery = query(postsCol, orderBy("createdAt", "desc"));
 onSnapshot(postsQuery, (snapshot) => {
   postsList.innerHTML = ""; // clear current list
